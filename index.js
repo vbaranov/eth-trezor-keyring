@@ -77,11 +77,14 @@ class TrezorKeyring extends EventEmitter {
         .then(_ => {
           const from = this.unlockedAccount
           const to = from + n
-          this.accounts = []
+          // do not clear previous accounts on adding
+          // this.accounts = []
 
           for (let i = from; i < to; i++) {
             const address = this._addressFromIndex(pathBase, i)
-            this.accounts.push(address)
+            if (!this.accounts.includes(address)) {
+              this.accounts.push(address)
+            }
             this.page = 0
           }
           resolve(this.accounts)
