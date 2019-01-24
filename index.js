@@ -251,8 +251,10 @@ class TrezorKeyring extends EventEmitter {
     throw new Error('Not supported on this device')
   }
 
-  forgetDevice () {
-    this.accounts = []
+  forgetDevice (clearAccounts) {
+    if (clearAccounts) {
+      this.accounts = []
+    }
     this.hdk = new HDKey()
     this.page = 0
     this.unlockedAccount = 0
