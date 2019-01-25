@@ -361,7 +361,7 @@ describe('TrezorKeyring', function () {
             await keyring.addAccounts()
 
             // Wipe the keyring
-            keyring.forgetDevice()
+            keyring.forgetDevice(true)
 
             const accounts = await keyring.getAccounts()
 

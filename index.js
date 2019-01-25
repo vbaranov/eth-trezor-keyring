@@ -252,13 +252,16 @@ class TrezorKeyring extends EventEmitter {
   }
 
   forgetDevice (clearAccounts) {
+    let accountsToForget = []
     if (clearAccounts) {
+      accountsToForget = this.accounts
       this.accounts = []
     }
     this.hdk = new HDKey()
     this.page = 0
     this.unlockedAccount = 0
     this.paths = {}
+    return accountsToForget
   }
 
   /* PRIVATE METHODS */
