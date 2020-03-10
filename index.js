@@ -267,9 +267,11 @@ class TrezorKeyring extends EventEmitter {
   }
 
   setHdPath (hdPath) {
-    if (hdPath) {
-      this.hdPath = hdPath
+    // Reset HDKey if the path changes
+    if (this.hdPath !== hdPath) {
+      this.hdk = new HDKey()
     }
+    this.hdPath = hdPath
   }
 
   /* PRIVATE METHODS */
