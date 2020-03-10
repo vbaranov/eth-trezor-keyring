@@ -266,6 +266,12 @@ class TrezorKeyring extends EventEmitter {
     return accountsToForget
   }
 
+  setHdPath (hdPath) {
+    if (hdPath) {
+      this.hdPath = hdPath
+    }
+  }
+
   /* PRIVATE METHODS */
 
   _normalize (buf) {

@@ -391,4 +391,14 @@ describe('TrezorKeyring', function () {
         })
     })
 
+    describe('setHdPath', function () {
+        it('should set new path to derive accounts', async function () {
+            assert.equal(keyring.hdPath, `m/44'/60'/0'/0`)
+
+            keyring.setHdPath(`m/44'/137'/0'/0`)
+
+            assert.equal(keyring.hdPath, `m/44'/137'/0'/0`)
+        })
+    })
+
 })
