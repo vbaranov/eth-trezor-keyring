@@ -1,7 +1,7 @@
 {
   "name": "eth-trezor-keyring",
   "version": "0.4.0",
-  "description": "A MetaMask compatible keyring, for trezor hardware wallets",
+  "description": "A MetaMask/Nifty wallet compatible keyring, for trezor hardware wallets",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -16,7 +16,8 @@
     "ethereum",
     "keyring",
     "trezor",
-    "metamask"
+    "metamask",
+    "nifty"
   ],
   "author": "Bruno Barbieri",
   "license": "ISC",
